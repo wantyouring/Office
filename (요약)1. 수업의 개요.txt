@@ -16,3 +16,7 @@ logistic regression
 multivariable(vector) linear/logistic regression
 neural networks
 deep learning
+
+
+참고
+http://www.holehouse.org/mlclass/    -> Andrew Ng교수 필기,설명
