@@ -1,0 +1,27 @@
+머신러닝의 용어와 개념 설명
+
+명확한 프로그래밍의 제한점들.
+-스팸메일 필터링
+-자동주행 자동차
+
+프로그램이 학습해서 배우는.
+
+Supervised learning: 정해진(label이 달려있는) 데이터들 학습.
+Unsupervised learning: ex) 구글뉴스 grouping, 비슷한 단어들 모으기.
+
+Supervised learning
+:이미지 레이블링.
+이메일 스팸필터.
+시험점수 예상.
+
+Training data set
+lable로 학습 -> 모델 발생.
+
+알파고 (Supervised learning)
+Training data set : 여러 경기들
+
+Supervised learning types:
+시험점수 예측 : (0점~100점)regression
+Pass/Fail : (둘 중 하나)binary classification(분류)
+A,B,C,E,F중 고르기 : multi-label classification
+
