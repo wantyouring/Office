@@ -1,0 +1,8 @@
+Tensorflow
+
+Data flow graph
+nodes : operations
+edges : data arrays(tensors)
+
+Tensorflow설치 및 버전확인.
+5분~
