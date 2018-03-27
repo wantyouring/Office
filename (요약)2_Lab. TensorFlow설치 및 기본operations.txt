@@ -1,0 +1,22 @@
+Tensorflow
+
+Data flow graph
+nodes : operations
+edges : data arrays(tensors)
+
+Tensorflow설치 및 버전확인.
+
+
+노드 -> 세션 -> 세션으로 노드를 실행(sess.run(op))
+
+hello tensorflow.
+Computational Graph
+
+그래프 빌드 -> 그래프 실행 -> 그래프로 variable 초기화.
+
+placeholder(노드), feed_dict(값을 넘겨줌)
+
+tensor란? 배열과 유사
+Rank : 0차,1차,2차...
+Shape : 모양(a*b, a*b*c ...)
+Types : float double int ....

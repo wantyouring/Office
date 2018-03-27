@@ -1,0 +1,13 @@
+supervised learning (지도 학습)
+
+data -> regression(학습) -> 결과값 출력(예측)
+
+H(x) = Wx+b
+
+어떤 H(x)가 가장 좋은 그래프일지???
+
+-> 실제 데이터와 H(x)의 차이가 최소!
+   ------------------------ = Cost function
+    ㄴcost = (차이)^2 들의 평균.
+
+cost(W,b)최소로 만드는 W,b를 구하자.
