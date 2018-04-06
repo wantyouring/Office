@@ -1,0 +1,18 @@
+Linear Regression의 cost 최소화 알고리즘 원리
+
+
+cost = (값 차이^2)의 평균
+
+W에 따른 cost 변화 -> cost 최소화되는 w를 찾자.
+
+Gradient descent algorithm (기울기 하강 알고리즘)
+- cost 최소화 하는데 이용.
+
+미분으로 최소값 구하자!
+
+W에 W-cost(W)함수를 한 변수로 편미분.
+W := W-(cost(W))`
+
+Convex function
+어느 점에서 gradient algorithm을 써도 도착지가 똑같음.
+(-> linear regression의 조건)

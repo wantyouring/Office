@@ -1,0 +1,18 @@
+여러개의 입력(feature)의 Linear Regression
+
+Recap
+가설 - cost 함수 - gradient descent algorithm
+	ㄴ밥그릇 형태 함수
+
+H(x1,x2,...,xn) = w1x1+w2x2+...+wnxn+b
+ㄴ이 예측식으로 나온 추정 값과 실제 값의 차이로 또 cost함수 구할 수 있음.
+ㄴMatrix 연산으로 하면 쉽게 표현가능.
+H(X) = XW
+
+many x instances
+행으로 쭉 나열하면 됨.
+
+X[instance수,variable수] * W[variable수,Y)] = H[instance 수, Y]
+
+H(x) = Wx + b
+H(X) = XW
