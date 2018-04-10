@@ -1,0 +1,102 @@
+https://matplotlib.org/users/installing.html#windows
+ㄴ여기에서 matplotlib를 설치해야하나 
+--------------------------------------------------------------------------
+(C:\Program Files\Anaconda3) C:\Windows\system32>python -mpip install -U matplotlib
+Collecting matplotlib
+  Using cached matplotlib-2.2.2-cp35-cp35m-win_amd64.whl
+Collecting six>=1.10 (from matplotlib)
+  Using cached six-1.11.0-py2.py3-none-any.whl
+Requirement already up-to-date: numpy>=1.7.1 in c:\program files\anaconda3\lib\site-packages (from matplotlib)
+Collecting pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 (from matplotlib)
+  Using cached pyparsing-2.2.0-py2.py3-none-any.whl
+Collecting python-dateutil>=2.1 (from matplotlib)
+  Using cached python_dateutil-2.7.2-py2.py3-none-any.whl
+Collecting kiwisolver>=1.0.1 (from matplotlib)
+  Using cached kiwisolver-1.0.1-cp35-none-win_amd64.whl
+Requirement already up-to-date: cycler>=0.10 in c:\program files\anaconda3\lib\site-packages (from matplotlib)
+Collecting pytz (from matplotlib)
+  Using cached pytz-2018.4-py2.py3-none-any.whl
+Collecting setuptools (from kiwisolver>=1.0.1->matplotlib)
+  Using cached setuptools-39.0.1-py2.py3-none-any.whl
+Installing collected packages: six, pyparsing, python-dateutil, setuptools, kiwisolver, pytz, matplotlib
+  Found existing installation: six 1.10.0
+    DEPRECATION: Uninstalling a distutils installed project (six) has been deprecated and will be removed in a future version. This is due to the fact that uninstalling a distutils project will only partially uninstall the project.
+    Uninstalling six-1.10.0:
+      Successfully uninstalled six-1.10.0
+  Found existing installation: pyparsing 2.1.4
+    Uninstalling pyparsing-2.1.4:
+      Successfully uninstalled pyparsing-2.1.4
+  Found existing installation: python-dateutil 2.5.3
+    Uninstalling python-dateutil-2.5.3:
+      Successfully uninstalled python-dateutil-2.5.3
+  Found existing installation: setuptools 27.2.0
+Cannot remove entries from nonexistent file c:\program files\anaconda3\lib\site-packages\easy-install.pth
+
+(C:\Program Files\Anaconda3) C:\Windows\system32>python -mpip install -U pip
+Requirement already up-to-date: pip in c:\program files\anaconda3\lib\site-packages
+
+(C:\Program Files\Anaconda3) C:\Windows\system32>python -mpip install -U matplotlib
+Collecting matplotlib
+  Using cached matplotlib-2.2.2-cp35-cp35m-win_amd64.whl
+Requirement already up-to-date: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in c:\program files\anaconda3\lib\site-packages (from matplotlib)
+Requirement already up-to-date: six>=1.10 in c:\program files\anaconda3\lib\site-packages (from matplotlib)
+Collecting kiwisolver>=1.0.1 (from matplotlib)
+  Using cached kiwisolver-1.0.1-cp35-none-win_amd64.whl
+Requirement already up-to-date: cycler>=0.10 in c:\program files\anaconda3\lib\site-packages (from matplotlib)
+Collecting pytz (from matplotlib)
+  Using cached pytz-2018.4-py2.py3-none-any.whl
+Requirement already up-to-date: numpy>=1.7.1 in c:\program files\anaconda3\lib\site-packages (from matplotlib)
+Requirement already up-to-date: python-dateutil>=2.1 in c:\program files\anaconda3\lib\site-packages (from matplotlib)
+Collecting setuptools (from kiwisolver>=1.0.1->matplotlib)
+  Using cached setuptools-39.0.1-py2.py3-none-any.whl
+Installing collected packages: setuptools, kiwisolver, pytz, matplotlib
+  Found existing installation: setuptools 27.2.0
+Cannot remove entries from nonexistent file c:\program files\anaconda3\lib\site-packages\easy-install.pth
+
+--------------------------------------------------------------------------
+에러로 설치되지 않음.
+
+
+Gradient descent.
+목표 : W에 대한 함수 cost(W)함수의 최솟값을 찾기
+W로 미분한 값이 0에 가까워야 하므로,
+cost(W)를 미분한 값(=cost(W)의 기울기)을 W에서 빼준 값을 W에 넣어서 W값 조정해줌.
+ㄴ기울기가 음수면 더해지고 양수면 빼져서 계속 수행 시 0에 수렴.
+
+# 직접 미분한 과정
+learning_rate = 0.1
+gradient = tf.reduce_mean((W * X - Y) * X)
+descent = W - learning_rate * gradient
+
+# tensorflow의 optimize를 사용한 과정(미분할 필요없음)
+# Minimize: Gradient Descent Magic
+optimizer = 
+  tf.train.GradientDescentOptimizer(learning_rate=0.1)
+train = optimizer.minimize(cost)
+--------------------------------------------------------------------------
+
+# tf Graph Input
+X = [1, 2, 3]
+Y = [1, 2, 3]
+
+# Set wrong model weights
+W = tf.Variable(5.0)
+# Linear model
+hypothesis = X * W
+# cost/loss function
+cost = tf.reduce_mean(tf.square(hypothesis - Y))
+# Minimize: Gradient Descent Magic
+optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.1)
+train = optimizer.minimize(cost)
+
+# Launch the graph in a session.
+sess = tf.Session()
+# Initializes global variables in the graph.
+sess.run(tf.global_variables_initializer())
+
+for step in range(100):
+   print(step, sess.run(W))
+   sess.run(train)
+
+--------------------------------------------------------------------------
+gradient값을 따로 빼서 적용(또는 수정 후 적용)할 수 있음.
