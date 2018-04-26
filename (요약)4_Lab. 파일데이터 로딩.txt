@@ -1,0 +1,24 @@
+파일데이터 로딩
+
+파일에 입력데이터 저장하기 -> 보통 .csv파일에 저장.
+
+######numpy로 입력데이터 받기###########
+import numpy as np
+
+xy = np.loadtxt('data-01-test-score.csv', delimiter=',', dtype=np.float32)
+x_data = xy[:, 0:-1]
+y_data = xy[:, [-1]]
+
+# Make sure the shape and data are OK
+print(x_data.shape, x_data, len(x_data))
+print(y_data.shape, y_data)
+########################################
+
+Slicing기능 중요! 많이 사용. 따로 공부해보기.
+
+Queue Runners기능 : 1. Queue에 파일이름들을 올리고,
+2. Reader로 value값을 읽어옴.
+3. 일정 기준으로 decode해 데이터 분리(파싱)
+
+batch : 펌프로 빨아들이듯(?) 데이터 읽어오기. 몇개씩 단위로.
++batch shuffle 및 기타 기능들.

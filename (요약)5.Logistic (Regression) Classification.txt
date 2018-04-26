@@ -1,0 +1,26 @@
+Logistic (Regression) Classification
+
+학습 : cost를 최소화하는 W를 찾는 과정.
+ex)기울기 감소(극점 찾기로 최소값 찾기)
+
+classification : 분류.
+ex)binary classification (A or B 로 구별하기)
+	ㄴ페이스북 feed(이전 데이터들로 학습해 새로운 데이터 보일지vs 안보여줄 지)
+
+binary classification -> 0,1 encoding. (yes or no)
+
+ex)주식시장 머신러닝(buy or sell).
+
+
+
+
+binary classification 그래프에서 linear regression 적용.
+-> 그대로 적용 시 0과 1이 아닌 다른 형태의 값들이 나올 수 있음.
+
+이를 0과 1 사이로 넣고싶다...?
+->g(z)라는 함수를 찾음!
+
+g(z) = 1/(1+e^(-z)) : sigmoid함수(= logistic function)
+-> 1과 0에 수렴하는 그래프.
+
+결론 : logistic hypothesis -> sigmoid함수로 가설을 세우기!
