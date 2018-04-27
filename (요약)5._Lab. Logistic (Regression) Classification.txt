@@ -1,0 +1,45 @@
+lab
+
+
+################소스코드###################
+x1,x2 -> y(0 or 1)
+
+X = tf.placeholder(tf.float32, shape=[None, 2])	#None : 값 갯수, 2 : x1,x2
+Y = tf.placeholder(tf.float32, shape=[None, 1])	#None : 값 갯수, 1 : 0 or 1 값
+
+W = tf.Variable(tf.random_normal([2, 1]), name='weight')	#weight 2:input값 갯수, 1:output값 갯수
+b = tf.Variable(tf.random_normal([1]), name='bias')		#bias : 1:output값 갯수
+
+# Hypothesis using sigmoid: tf.div(1., 1. + tf.exp(tf.matmul(X, W) + b))
+hypothesis = tf.sigmoid(tf.matmul(X, W) + b)		#hypothesis에 sigmoid함수식 대입.
+
+# cost/loss function
+cost = -tf.reduce_mean(Y * tf.log(hypothesis) + (1 - Y) *
+                      tf.log(1 - hypothesis))		#cost 정의 그대로 대입.
+
+train = tf.train.GradientDescentOptimizer(learning_rate=0.01).minimize(cost)	#train이 cost알아서 minimize해줌
+
+# Accuracy computation	
+# True if hypothesis>0.5 else False
+predicted = tf.cast(hypothesis > 0.5, dtype=tf.float32)		#0.5보다 크면 1(true) 작거나 같으면 0(false)
+accuracy = tf.reduce_mean(tf.cast(tf.equal(predicted, Y), dtype=tf.float32))
+
+				#학습시키기
+# Launch graph
+with tf.Session() as sess:
+   # Initialize TensorFlow variables
+   sess.run(tf.global_variables_initializer())
+
+   for step in range(10001):
+       cost_val, _ = sess.run([cost, train], feed_dict={X: x_data, Y: y_data})
+       if step % 200 == 0:
+           print(step, cost_val)
+
+   # Accuracy report
+   h, c, a = sess.run([hypothesis, predicted, accuracy],
+                      feed_dict={X: x_data, Y: y_data})
+   print("\nHypothesis: ", h, "\nCorrect (Y): ", c, "\nAccuracy: ", a)
+################################################################
+
+당뇨병 예측.
+kaggle -> 데이터들 모아놓은 사이트
