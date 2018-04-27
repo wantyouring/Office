@@ -1,0 +1,16 @@
+Logistic (Regression) Classification cost함수.
+
+h(x)가 일차식 선 -> sigmoid함수로 변화.
+ㄴ기존의 cost최소값 찾는 gradient그대로 적용해서는 최저점 찾을 수 없음!
+
+cost함수 : H(x)와 y의 차이가 작을 수록 작게.
+
+y=1	H(x) = 1 -> cost = 0
+	H(x) = 0 -> cost = inf
+y=0	H(x) = 0 -> cost = 0
+	H(x) = 1 -> cost = inf
+
+최종 cost함수 :
+C(H(x),y) = -ylog(H(x)) - (1-y)log(1-H(x))
+
+이제 gradient decent 알고리즘 사용가능!
