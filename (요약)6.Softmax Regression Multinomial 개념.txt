@@ -1,0 +1,9 @@
+Softmax Regression
+
+기존 logistic regression
+sigmoid함수로 0~1사이의 추측값 내었음.
+예측한다. -> 학습해 구분선을 찾는다.
+
+Multinomial classification
+A data, B data, C data
+-> A or not, B or not, C or not 세 구분선.

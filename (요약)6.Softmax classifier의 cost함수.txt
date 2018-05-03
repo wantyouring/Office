@@ -1,0 +1,11 @@
+Softmax classifier의 cost함수
+
+softmax함수로 y(2.0,1.0.0.1)이러한 데이터를 (0.7,0.2,0.1)로 바꿔줌.
+0.7+0.2+0.1 = 1.0
+
+cost function
+cross-entropy함수 -> 다른 cost함수와 같이 예측값 틀리면 cost커짐.
+
+logistic cost함수는 cross entropy함수에 포함됨.
+
+cost 최소화 : gradient descent 사용.
